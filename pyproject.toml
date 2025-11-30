@@ -1,0 +1,62 @@
+# Ruff configuration file
+# See: https://docs.astral.sh/ruff/configuration
+
+[project]
+name = "quaternion"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# Configure pytest
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"
+testpaths = ["testing"]
+
+# Configure mypy
+[tool.mypy]
+python_version = "3.14"
+strict = true
+warn_unused_configs = true
+warn_unused_ignores = true
+show_error_codes = true
+packages = ["quaternion"]  # only type-check package code
+exclude = ["testing"]  # exclude mypy test on testing directory
+
+# Dependencies
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "mypy",
+    "ruff",
+    "types-setuptools",
+    "numpy>=2.3",
+    "numpy-stubs",
+]
+
+[tool.ruff]
+# Same as Black
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+unfixable = ["F401"]
+ignore = ["ERA001"]
+
+[tool.ruff.format]
+line-ending = "lf"
+
+# Like Black, use double quotes for strings
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs
+indent-style = "space"
+
+# Like Black, respect magic trailing commas
+skip-magic-trailing-comma = false

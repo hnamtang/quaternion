@@ -1,0 +1,10 @@
+# Build
+__pycache__
+.mypy_cache
+.pytest_cache
+
+# Exclude Python virtual environment
+.venv
+
+# Misc
+.DS_Store

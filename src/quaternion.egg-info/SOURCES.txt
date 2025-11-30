@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/quaternion/quaternion.py
+src/quaternion/vector3.py
+src/quaternion.egg-info/PKG-INFO
+src/quaternion.egg-info/SOURCES.txt
+src/quaternion.egg-info/dependency_links.txt
+src/quaternion.egg-info/requires.txt
+src/quaternion.egg-info/top_level.txt

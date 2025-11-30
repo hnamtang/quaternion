@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: quaternion
+Version: 0.1.0
+Requires-Python: >=3.11
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: types-setuptools; extra == "dev"
+Requires-Dist: numpy>=2.3; extra == "dev"
+Requires-Dist: numpy-stubs; extra == "dev"
