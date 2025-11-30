@@ -1,9 +1,0 @@
-
-[dev]
-pytest
-pytest-cov
-mypy
-ruff
-types-setuptools
-numpy>=2.3
-numpy-stubs
