@@ -1,4 +1,5 @@
-import numpy as np
+from math import pi, sqrt
+
 from assert_equal import assert_obj_equal, assert_val_equal
 
 from quaternion.vector3 import Vector3
@@ -14,7 +15,7 @@ def test_norms():
     assert_val_equal(v.norm(1), abs(x) + abs(y) + abs(z))
 
     # 2nd norm
-    assert_val_equal(v.norm(2), np.sqrt(x**2 + y**2 + z**2))
+    assert_val_equal(v.norm(2), sqrt(x**2 + y**2 + z**2))
 
     # Infinity norm
     assert_val_equal(v.norm("inf"), max(abs(x), abs(y), abs(z)))
@@ -24,7 +25,7 @@ def test_normalize():
     x = 5.2
     y = 2.7
     z = -8.3
-    length = np.sqrt(x**2 + y**2 + z**2)
+    length = sqrt(x**2 + y**2 + z**2)
     v = Vector3(x, y, z)
 
     assert_obj_equal(v.normalize(), Vector3(x / length, y / length, z / length))
@@ -69,7 +70,7 @@ def test_angle():
     x2, y2, z2 = 0, 0, 1
     v2 = Vector3(x2, y2, z2)
 
-    assert_val_equal(v1.angle(v2), np.pi / 2)
+    assert_val_equal(v1.angle(v2), pi / 2)
     assert_val_equal(v1.angle(v2, "deg"), 90)
 
 

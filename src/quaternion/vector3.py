@@ -119,6 +119,18 @@ class Vector3:
         else:
             raise TypeError(f"unit must be str. Got {type(unit)}")
 
+    def copy(self) -> "Vector3":
+        """
+        Returns a copy of the vector.
+        """
+        return Vector3(self.x, self.y, self.z)
+
+    def get(self) -> tuple[int | float, int | float, int | float]:
+        """
+        Extracts components of the vector.
+        """
+        return (self.x, self.y, self.z)
+
     def __add__(self, other: "Vector3") -> "Vector3":
         """
         Python magic method for vector addition.
@@ -181,18 +193,12 @@ class Vector3:
     def __str__(self) -> str:
         """
         Returns a string representation of the vector (calls _toString with default precision).
-
-        Returns:
-            A formatted string representation of the vector.
         """
         return self._to_string()
 
     def __repr__(self) -> str:
         """
         Returns a detailed string representation of the vector.
-
-        Returns:
-            A detailed string representation of the vector.
         """
         return f"Vector3({self.x}, {self.y}, {self.z})"
 
